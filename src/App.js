@@ -4,7 +4,7 @@ import CardViewer from './CardViewer';
 import HomePage from './HomePage';
 import {
   Routes,
-  Route 
+  Route,
 } from 'react-router-dom';
 
 class App extends React.Component {
@@ -15,7 +15,6 @@ class App extends React.Component {
         {front: 'front1', back: 'back1'},
         {front: 'front2', back: 'back2'},
       ],
-      editor: true,
     }
   }
 
@@ -27,10 +26,6 @@ class App extends React.Component {
   deleteCard = (i) => {
     const cards = this.state.cards.slice(0,i).concat(this.state.cards.slice(i+1));
     this.setState({cards});
-  }
-
-  switchMode = () => {
-    this.setState({editor: !this.state.editor});
   }
 
   handleChange = (event) => {

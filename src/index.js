@@ -4,10 +4,16 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 import './styles/index.css';
-import { initializeApp } from "firebase/app";
+
+import firebase from "firebase/compat/app";
 import 'firebase/auth';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+
+import { createStore, combineReducers, compose } from 'redux'
+import { Provider } from 'react-redux';
+import {
+  ReactReduxFirebaseProvider,
+  firebaseReducer
+} from 'react-redux-firebase'
 
 
 const firebaseConfig = {
@@ -19,12 +25,34 @@ const firebaseConfig = {
   appId: "1:624360933867:web:9a8e37e24e40441339f1ae"
 };
 
+const rrfConfig = {
+  userProfile: 'users'
+}
 
-const app = initializeApp(firebaseConfig);
+
+const app = firebase.initializeApp(firebaseConfig);
+
+const rootReducer = combineReducers({
+  firebase: firebaseReducer
+  // firestore: firestoreReducer // <- needed if using firestore
+})
+
+const initialState = {}
+const store = createStore(rootReducer, initialState)
+
+const rrfProps = {
+  firebase,
+  config: rrfConfig,
+  dispatch: store.dispatch
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
+  <Provider store={store}>
+    <ReactReduxFirebaseProvider {...rrfProps}>
+      <BrowserRouter>
+          <App />
+      </BrowserRouter>
+    </ReactReduxFirebaseProvider>
+  </Provider>
 );

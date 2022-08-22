@@ -13,5 +13,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DATAMATCH_BOOTCAMP_F4128 }}'
-          projectId: datamatch-bootcamp-f4128
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DM_BOOTCAMP_D32B8 }}'
+          projectId: dm-bootcamp-d32b8
