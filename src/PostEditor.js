@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/PostEditor.css'
 
-class CardEditor extends React.Component {
+class PostEditor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -63,4 +63,4 @@ class CardEditor extends React.Component {
     }
 }
 
-export default CardEditor;
+export default PostEditor;

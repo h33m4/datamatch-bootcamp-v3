@@ -1,8 +1,8 @@
 import React from 'react';
-import './styles/CardViewer.css'
+import './styles/PostViewer.css'
 import { Link } from 'react-router-dom';
 
-class CardViewer extends React.Component {
+class PostViewer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -35,7 +35,7 @@ class CardViewer extends React.Component {
 
         return (
             <div className="flex flex-col flex-align-ctr flex-gap-sm">
-                <h2>Card Viewer</h2>
+                <h2>Post Viewer</h2>
                 <h3>Currently viewing card: {this.state.empty ? 0 : i + 1} out of {this.props.cards.length}</h3>
                 <div className='card' onClick={this.flipCard}>
                     {this.renderCard(i)}
@@ -51,4 +51,4 @@ class CardViewer extends React.Component {
     }
 }
 
-export default CardViewer;
+export default PostViewer;

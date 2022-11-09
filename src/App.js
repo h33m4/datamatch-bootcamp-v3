@@ -2,18 +2,14 @@ import React from "react";
 import PostEditor from "./PostEditor";
 import PostViewer from './PostViewer';
 import { NavBar } from "./NavBar";
-import {
-  Routes,
-  Route 
-} from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       cards: [
-        {front: "You know what's not funny?", back: ''},
-        {front: 'front2', back: 'back2'},
+        {front: 'Joke 1 Front', back: 'Joke 1 Back'},
+        {front: 'Joke 2 Front', back: 'Joke 2 Back'},
       ],
       editor: true,
     }

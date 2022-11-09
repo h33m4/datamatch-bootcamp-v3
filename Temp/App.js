@@ -1,10 +1,10 @@
 import React from "react";
-import CardEditor from "./CardEditor";
-import CardViewer from './CardViewer';
+import PostEditor from "./PostEditor";
+import PostViewer from './PostViewer';
 import HomePage from './HomePage';
 import {
   Routes,
-  Route 
+  Route,
 } from 'react-router-dom';
 
 class App extends React.Component {
@@ -15,7 +15,6 @@ class App extends React.Component {
         {front: 'front1', back: 'back1'},
         {front: 'front2', back: 'back2'},
       ],
-      editor: true,
     }
   }
 
@@ -29,10 +28,6 @@ class App extends React.Component {
     this.setState({cards});
   }
 
-  switchMode = () => {
-    this.setState({editor: !this.state.editor});
-  }
-
   handleChange = (event) => {
     const side = event.currentTarget.name;
     const index = event.target.parentNode.parentNode.getAttribute('name');
@@ -42,12 +37,12 @@ class App extends React.Component {
   }
 
   render() {
-    const cardEditor = <CardEditor handleChange={this.handleChange} switchMode={this.switchMode} deleteCard={this.deleteCard} addCard={this.addCard} className="flex flex-col flex-jc" cards={this.state.cards} />
-    const cardViewer = <CardViewer switchMode={this.switchMode} cards={this.state.cards} />
+    const postEditor = <PostEditor handleChange={this.handleChange} switchMode={this.switchMode} deleteCard={this.deleteCard} addCard={this.addCard} className="flex flex-col flex-jc" cards={this.state.cards} />
+    const postViewer = <PostViewer switchMode={this.switchMode} cards={this.state.cards} />
     return (
       <Routes>
-          <Route path="/editor" element={cardEditor}/>
-          <Route path="/viewer" element={cardViewer}/>
+          <Route path="/editor" element={postEditor}/>
+          <Route path="/viewer" element={postViewer}/>
           <Route path="/" element={<HomePage />}/>
       </Routes>
       );

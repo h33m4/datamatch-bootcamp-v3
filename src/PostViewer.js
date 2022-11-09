@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/PostViewer.css'
 
-class CardViewer extends React.Component {
+class PostViewer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -50,4 +50,4 @@ class CardViewer extends React.Component {
     }
 }
 
-export default CardViewer;
+export default PostViewer;
