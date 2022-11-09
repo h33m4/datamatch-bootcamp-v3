@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/CardEditor.css'
+import './styles/PostEditor.css'
 
 class CardEditor extends React.Component {
     constructor(props) {
@@ -41,12 +41,12 @@ class CardEditor extends React.Component {
 
         return(
             <div className="flex flex-col flex-align-ctr flex-gap-sm">
-                <h2>Card Editor</h2>
+                <h2>Post Editor</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Front</th>
-                            <th>Back</th>
+                            <th>Post front</th>
+                            <th>Post back</th>
                             <th>Delete</th>
                         </tr>
                     </thead>

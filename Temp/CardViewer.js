@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/CardViewer.css'
+import { Link } from 'react-router-dom';
 
 class CardViewer extends React.Component {
     constructor(props) {
@@ -43,7 +44,7 @@ class CardViewer extends React.Component {
                     <button disabled={this.state.index <= 0 ? true : false} onClick={() => this.changeCard(-1)}>Previous</button>
                     <button disabled={this.state.index >= this.props.cards.length - 1 ? true : false} onClick={() => this.changeCard(1)}>Next</button>
                 </div>
-                <button onClick={this.props.switchMode}>Switch to Editor</button>
+                <button><Link to="/editor">Switch to Editor</Link></button>
             </div>
 
         )

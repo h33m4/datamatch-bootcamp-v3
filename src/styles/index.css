@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Work+Sans:wght@300;400&display=swap');
 
 :root {
-  --bg-color: #F6F7FB;
+  --bg-color: #000000;
+  --txt-color: #ffffff;
+  --red: #A01B2E;
 }
 
 body {
@@ -13,11 +15,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   padding: 1rem;
+  color: var(--txt-color);
   background-color: var(--bg-color);
 }
 
 h1, h2, h3 {
   font-family: 'Crimson Text';
+  color: var(--red);
 }
 
 button, input, table {
